@@ -1,0 +1,244 @@
+:root {
+    --header-height: 50px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #212529;
+    font-family: "Inter", sans-serif;
+}
+
+.main-container {
+    display: flex;
+}
+
+/* --- header section --- */
+
+.header {
+    position: sticky;
+    top: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    width: 100%;
+    height: var(--header-height);
+
+    padding: 0 1rem;
+    
+    background-color: #fff;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-opener {
+    background: none;
+    border: none;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 40px;
+    height: 40px;
+    
+    cursor: pointer;
+}
+
+.sidebar-opener:hover {
+    background-color: #f1f3f5;
+}
+
+.sidebar-opener .icon {
+    width: 24px;
+    height: 24px;
+}
+
+.youtube-logo,
+.youtube-logo svg {
+    height: 24px;
+}
+
+/* --- main content --- */
+
+/* content settings */
+.content {
+    margin: 1rem;
+}
+
+/* sidebar settings */
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    
+    /* width: 70px; */
+    height: calc(100vh - var(--header-height));
+
+    background-color: #fff;
+    border-right: 1px solid #f1f3f5;
+
+
+    padding: 2rem 0;
+}
+
+.sidebar .top .name,
+.sidebar .top .id,
+.sidebar .mid .name {
+    display: none;
+}
+
+.sidebar.active .top .name,
+.sidebar.active .top .id,
+.sidebar.active .mid .name {
+    display: block;
+}
+
+/* top */
+.sidebar .top {
+    margin-bottom: 1rem;
+}
+
+.sidebar .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar .profile .pic {
+position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar .profile .pic img{
+    width: 32px;
+    height: 32px;
+
+    border-radius: 50%;
+}
+
+.sidebar.active .profile .pic img {
+    width: 64px;
+    height: 64px;
+
+    margin-bottom: 0.5rem;
+}
+
+.sidebar.active .profile .pic .checked {
+    position: absolute;
+    bottom: 2px;
+    right: -5px;
+
+    height: 24px;
+    width: 24px;
+
+    fill: #fa5252;
+}
+
+.sidebar.active .profile .name {
+    margin-bottom: 0.25rem;
+
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.sidebar.active .profile .id {
+    margin-bottom: 0.25rem;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    color: #868e96;
+}
+
+/* mid */
+.sidebar .mid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: stretch;
+    flex-grow: 1;
+    
+    list-style: none;
+
+    width: 100%;
+
+    overflow: hidden auto;
+}
+
+.sidebar .mid .icon {
+    width: 32px;
+    height: 32px;
+    
+    fill: #212529;
+}
+
+.sidebar .mid li {
+    position: relative;
+    
+    display: flex;
+    align-items: center;
+    
+    width: 100%;
+    height: 50px;
+    
+    padding: 0 1rem;
+
+    font-weight: 500;
+}
+
+.sidebar .mid li a {
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+    gap: 10px;
+
+    height: 100%;
+    width: 100%;
+}
+
+.sidebar .mid li:hover{
+    background-color: #f1f3f5;
+}
+
+.sidebar .mid a {
+    text-decoration: none;
+}
+
+.sidebar .mid .name {
+    color: #212529;
+}
+
+.sidebar .mid .active .name {
+    color: #fa5252;
+}
+
+.sidebar .mid .active .icon {
+    fill: #fa5252;
+}
+
+.sidebar .mid .active::before {
+    content: "";
+
+    position: absolute;
+    left: 0;
+
+    height: 100%;
+    width: 5px;
+
+    background-color: #fa5252;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+ 
